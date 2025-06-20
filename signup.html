@@ -9,23 +9,38 @@
         <div class="signup-container">
             <div class="signup-title">Create Account</div>
             <form id="signup_form" name="signup_form" class="flex-form" method="post" action="">
-                <input type="text" id="first_name" name="first_name" class="input" placeholder="First Name"/>
-                <span id="error_first_name" class="error-msg"></span>
-                <input type="text" id="last_name" name="last_name" class="input" placeholder="Last Name"/>
-                <span id="error_last_name" class="error-msg"></span>
-                <input type="text" id="email" name="email" class="input" placeholder="Email"/>
-                <span id="error_email" class="error-msg"></span>
-                <input type="text" id="confirm_email" name="confirm_email" class="input" placeholder="Confirm Email"/>
-                <span id="error_confirm_email" class="error-msg"></span>
-                <input type="text" id="username" name="username" class="input" placeholder="Username"/>
-                <span id="error_username" class="error-msg"></span>
-                <input type="password" id="password" name="password" class="input" placeholder="Password"/>
-                <span id="error_password" class="error-msg"></span>
-                <input type="password" id="confirm_password" name="confirm_password" class="input" placeholder="Confirm Password"/>
-                <span id="error_confirm_password" class="error-msg"></span>
+                <div class="group">
+                    <input type="text" id="first_name" name="first_name" class="input" placeholder="First Name"/>
+                    <span id="error_first_name" class="error-msg"></span>
+                </div>
+                <div class="group">
+                    <input type="text" id="last_name" name="last_name" class="input" placeholder="Last Name"/>
+                    <span id="error_last_name" class="error-msg"></span>
+                </div>
+                <div class="group">
+                    <input type="text" id="email" name="email" class="input" placeholder="Email"/>
+                    <span id="error_email" class="error-msg"></span>
+                </div>
+                <div class="group">
+                    <input type="text" id="confirm_email" name="confirm_email" class="input" placeholder="Confirm Email"/>
+                    <span id="error_confirm_email" class="error-msg"></span>
+                </div>
+                <div class="group">
+                    <input type="text" id="username" name="username" class="input" placeholder="Username"/>
+                    <span id="error_username" class="error-msg"></span>
+                </div>
+                <div class="group">
+                    <input type="password" id="password" name="password" class="input" placeholder="Password"/>
+                    <span id="error_password" class="error-msg"></span>
+                </div>
+                <div class="group">
+                    <input type="password" id="confirm_password" name="confirm_password" class="input" placeholder="Confirm Password"/>
+                    <span id="error_confirm_password" class="error-msg"></span>
+                </div>
                 <input type="submit" id="btn_signup" name="btn_signup" class="btn-secondary" value="Create Account"/>
                 <a href="index.html" class="btn-primary">Already have an account?</a>
             </form>
         </div>
+        <script src="validation.js"></script>
     </body>
 </html>
