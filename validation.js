@@ -8,6 +8,7 @@ const validateForm = function () {
     if (fname === '' || fname.length > 80) {
         let msg = (fname === '') ? 'First Name is required' : 'First Name cannot exceed 80 characters';
         fnameError.textContent = msg;
+        fnameError.classList.add('error-msg');
         fnameInput.classList.add('error');
         isValid = false;
     }
@@ -17,6 +18,7 @@ const validateForm = function () {
     if (lname === '' || lname.length > 80) {
         let msg = (lname === '') ? 'Last Name is required' : 'Last Name cannot exceed 80 characters';
         lnameError.textContent = msg;
+        lnameError.classList.add('error-msg');
         lnameInput.classList.add('error');
         isValid = false;
     }
@@ -27,11 +29,13 @@ const validateForm = function () {
     if (email === '' || email.length > 250) {
         let msg = (email === '') ? 'Email is required' : 'Email cannot exceed 250 characters';
         emailError.textContent = msg;
+        emailError.classList.add('error-msg');
         emailInput.classList.add('error');
         isValid = false;
     } else if (!emailPattern.test(email)) {
         let msg = 'Email must follow standard format: example@domain.com';
         emailError.textContent = msg;
+        emailError.classList.add('error-msg');
         emailInput.classList.add('error');
         isValid = false;
     }
@@ -41,6 +45,7 @@ const validateForm = function () {
     if (confirmEmail !== email) {
         let msg = 'Email address does not match';
         confirmEmailError.textContent = msg;
+        confirmEmailError.classList.add('error-msg');
         confirmEmailInput.classList.add('error');
         isValid = false;
     }
@@ -50,6 +55,7 @@ const validateForm = function () {
     if (username === '' || username.length > 80) {
         let msg = (username === '') ? 'Username is required' : 'Username cannot exceed 80 characters';
         usernameError.textContent = msg;
+        usernameError.classList.add('error-msg');
         usernameInput.classList.add('error');
         isValid = false;
     }
@@ -59,6 +65,7 @@ const validateForm = function () {
     if (password === '' || password.length > 250) {
         let msg = (password === '') ? 'Password is required' : 'Password cannot exceed 250 characters';
         passwordError.textContent = msg;
+        passwordError.classList.add('error-msg');
         passwordInput.classList.add('error');
         isValid = false;
     }
@@ -68,6 +75,7 @@ const validateForm = function () {
     if (confirmPassword !== password) {
         let msg = 'Password does not match';
         confirmPasswordError.textContent = msg;
+        confirmPasswordError.classList.add('error-msg');
         confirmPasswordInput.classList.add('error');
         isValid = false;
     }
@@ -84,7 +92,10 @@ $('#signup_form').addEventListener('submit', function (e) {
 document.querySelectorAll('input').forEach(input => {
     input.addEventListener('focus', () => {
         input.classList.remove('error');
-        const errorSpan = document.getElementById(`error_${input.id}`);
-        if (errorSpan) errorSpan.textContent = '';
+        const errorDiv = document.getElementById(`error_${input.id}`);
+        if (errorDiv) {
+            errorDiv.textContent = '';
+            errorDiv.classList.remove('error-msg');
+        } 
     });
 });
