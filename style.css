@@ -1,8 +1,6 @@
 body {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
-    /* min-height: 80vh; */
     font-family: Arial;
     background-color: #fcfafa;
 }
@@ -96,6 +94,30 @@ a.btn-secondary:hover {
 }
 .error-msg {
     color: red;
-    display: block;
     padding: 8px;
+}
+.landing-title {
+    font-size: 3em;
+    color: rgba(52, 152, 219, 0.5);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.landing-container {
+    margin-top: 200px;
+}
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+a.link,
+a.link:visited,
+a.link:active {
+    font-size: 1.2em;
+    color: #27ae60;
+    font-weight: bold;
+    text-decoration: none;
+}
+a.link:hover {
+    color: #2cbb67;
 }
