@@ -87,3 +87,9 @@ a.btn-secondary:hover {
     font-weight: bold;
     margin-bottom: 10px;
 }
+.error {
+    border: 1px solid red;
+}
+.error-msg {
+    color: red;
+}
