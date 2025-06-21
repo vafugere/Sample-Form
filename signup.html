@@ -6,39 +6,27 @@
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <div class="signup-container">
-            <div class="signup-title">Create Account</div>
+        <div class="form-container">
+            <div class="header">Create Account</div>
             <form id="signup_form" name="signup_form" class="flex-form" method="post" action="index.html">
-                <div class="group">
-                    <input type="text" id="first_name" name="first_name" class="input" placeholder="First Name"/>
-                    <div id="error_first_name"></div>
+                <input type="text" id="first_name" name="first_name" class="input" placeholder="First Name *"/>
+                <div id="error_first_name"></div>
+                <input type="text" id="last_name" name="last_name" class="input" placeholder="Last Name *"/>
+                <div id="error_last_name"></div>
+                <input type="text" id="email" name="email" class="input" placeholder="Email *"/>
+                <div id="error_email"></div>
+                <input type="text" id="confirm_email" name="confirm_email" class="input" placeholder="Confirm Email *"/>
+                <div id="error_confirm_email"></div>
+                <input type="text" id="username" name="username" class="input" placeholder="Username *"/>
+                <div id="error_username"></div>
+                <input type="password" id="password" name="password" class="input" placeholder="Password *"/>
+                <div id="error_password"></div>
+                <input type="password" id="confirm_password" name="confirm_password" class="input" placeholder="Confirm Password *"/>
+                <div id="error_confirm_password"></div>
+                <div class="button-container">
+                    <input type="submit" id="btn_signup" name="btn_signup" class="btn-primary" value="Create Account"/>
+                    <a href="index.html" class="btn-primary">Already have an account?</a>
                 </div>
-                <div class="group">
-                    <input type="text" id="last_name" name="last_name" class="input" placeholder="Last Name"/>
-                    <div id="error_last_name"></div>
-                </div>
-                <div class="group">
-                    <input type="text" id="email" name="email" class="input" placeholder="Email"/>
-                    <div id="error_email"></div>
-                </div>
-                <div class="group">
-                    <input type="text" id="confirm_email" name="confirm_email" class="input" placeholder="Confirm Email"/>
-                    <div id="error_confirm_email"></div>
-                </div>
-                <div class="group">
-                    <input type="text" id="username" name="username" class="input" placeholder="Username"/>
-                    <div id="error_username"></div>
-                </div>
-                <div class="group">
-                    <input type="password" id="password" name="password" class="input" placeholder="Password"/>
-                    <div id="error_password"></div>
-                </div>
-                <div class="group">
-                    <input type="password" id="confirm_password" name="confirm_password" class="input" placeholder="Confirm Password"/>
-                    <div id="error_confirm_password"></div>
-                </div>
-                <input type="submit" id="btn_signup" name="btn_signup" class="btn-secondary" value="Create Account"/>
-                <a href="index.html" class="btn-primary">Already have an account?</a>
             </form>
         </div>
         <script src="validation.js"></script>
