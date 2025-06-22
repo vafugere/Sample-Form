@@ -1,13 +1,22 @@
 const $ = (selector) => document.querySelector(selector);
 
 const validateForm = function () {
+    const fields = ['first_name', 'last_name', 'email', 'confirm_email', 'username', 'password', 'confirm_password'];
     let isValid = true;
+
+    fields.forEach(id => {
+        const input = $(`#${id}`);
+        if (input.value.trim() === '') {
+            input.classList.add('error');
+            isValid = false;
+        }
+    });
+
     const fname = $('#first_name').value.trim();
     const fnameInput = $('#first_name');
     const fnameError = $('#error_first_name');
-    if (fname === '' || fname.length > 80) {
-        let msg = (fname === '') ? 'First Name is required' : 'First Name cannot exceed 80 characters';
-        fnameError.textContent = msg;
+    if (fname.length > 80) {
+        fnameError.textContent = 'First name cannot exceed 80 characters';
         fnameError.classList.add('error-msg');
         fnameInput.classList.add('error');
         isValid = false;
@@ -15,9 +24,8 @@ const validateForm = function () {
     const lname = $('#last_name').value.trim();
     const lnameInput = $('#last_name');
     const lnameError = $('#error_last_name');
-    if (lname === '' || lname.length > 80) {
-        let msg = (lname === '') ? 'Last Name is required' : 'Last Name cannot exceed 80 characters';
-        lnameError.textContent = msg;
+    if (lname.length > 80) {
+        lnameError.textContent = 'Last name cannot exceed 80 characters';
         lnameError.classList.add('error-msg');
         lnameInput.classList.add('error');
         isValid = false;
@@ -26,25 +34,20 @@ const validateForm = function () {
     const emailInput = $('#email');
     const emailError = $('#error_email');
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (email === '' || email.length > 250) {
-        let msg = (email === '') ? 'Email is required' : 'Email cannot exceed 250 characters';
-        emailError.textContent = msg;
-        emailError.classList.add('error-msg');
-        emailInput.classList.add('error');
-        isValid = false;
-    } else if (!emailPattern.test(email)) {
-        let msg = 'Email must follow standard format: example@domain.com';
-        emailError.textContent = msg;
-        emailError.classList.add('error-msg');
-        emailInput.classList.add('error');
-        isValid = false;
+    if (email !== '') {
+        if (email.length > 250 || !emailPattern.test(email)) {
+            let msg = (email.length > 250) ? 'Email cannot exceed 250 characters' : 'Email must follow standard format: example@domain.com';
+            emailError.textContent = msg;
+            emailError.classList.add('error-msg');
+            emailInput.classList.add('error');
+            isValid = false;
+        }
     }
     const confirmEmail = $('#confirm_email').value.trim();
     const confirmEmailInput = $('#confirm_email');
     const confirmEmailError = $('#error_confirm_email');
     if (confirmEmail !== email) {
-        let msg = 'Email address does not match';
-        confirmEmailError.textContent = msg;
+        confirmEmailError.textContent = 'Email address does not match';
         confirmEmailError.classList.add('error-msg');
         confirmEmailInput.classList.add('error');
         isValid = false;
@@ -52,9 +55,8 @@ const validateForm = function () {
     const username = $('#username').value.trim();
     const usernameInput = $('#username');
     const usernameError = $('#error_username');
-    if (username === '' || username.length > 80) {
-        let msg = (username === '') ? 'Username is required' : 'Username cannot exceed 80 characters';
-        usernameError.textContent = msg;
+    if (username.length > 80) {
+        usernameError.textContent = 'Username cannot exceed 80 characters';
         usernameError.classList.add('error-msg');
         usernameInput.classList.add('error');
         isValid = false;
@@ -62,9 +64,8 @@ const validateForm = function () {
     const password = $('#password').value.trim();
     const passwordInput = $('#password');
     const passwordError = $('#error_password');
-    if (password === '' || password.length > 250) {
-        let msg = (password === '') ? 'Password is required' : 'Password cannot exceed 250 characters';
-        passwordError.textContent = msg;
+    if (password.length > 250) {
+        passwordError.textContent = 'Password cannot exceed 250 characters';
         passwordError.classList.add('error-msg');
         passwordInput.classList.add('error');
         isValid = false;
@@ -73,8 +74,7 @@ const validateForm = function () {
     const confirmPasswordInput = $('#confirm_password');
     const confirmPasswordError = $('#error_confirm_password');
     if (confirmPassword !== password) {
-        let msg = 'Password does not match';
-        confirmPasswordError.textContent = msg;
+        confirmPasswordError.textContent = 'Password does not match';
         confirmPasswordError.classList.add('error-msg');
         confirmPasswordInput.classList.add('error');
         isValid = false;
